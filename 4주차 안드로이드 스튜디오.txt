@@ -1,0 +1,245 @@
+penFileOutput( ) / openFileInput( )으로 파일 열기
+② read( ) / write( )로 파일 읽기 / 쓰기
+③ close( )로 파일 닫기
+
+시험
+
+-------
+
+settitle 나타나게 하려면 테마를 바꿔야 한다 noactionbar -> dark
+
+SQL : 사용자와 DBMS가 소통하기 위한 언어(DDL, DCL, DML) 시험
+
+데이터 : 하나하나의 단편적인 정보를 뜻함
+• 테이블 : 회원 데이터가 표 형태로 표현된 것
+• 데이터베이스(DB) : 테이블이 저장되는 장소로 주로 원통 모양으로 표현
+• 각 데이터베이스는 서로 다른 고유한 이름이 있어야 함
+• DBMS : 데이터베이스를 관리하는 시스템 또는 소프트웨어를 말함
+• 안드로이드에 포함된 SQLite 소프트웨어가 이에 해당
+• 열(칼럼 또는 필드) : 각 테이블은 1개 이상의 열로 구성됨
+• 열 이름 : 각 열을 구분하는 이름, 열 이름은 각 테이블 안에서는 중복되지 않아
+야 함
+• 데이터 형식 : 열의 데이터 형식을 뜻함
+• 테이블을 생성할 때 열 이름과 함께 지정해야 함
+• 행(로우) : 실제 데이터
+• SQL : 사용자와 DBMS가 소통하기 위한 언어(DDL, DCL, DML)
+
+
+----------------------- 1차 db
+
+Microsoft Windows [Version 10.0.26100.3194]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\YUHAN>cd AppData\local\Android\Sdk\platform-tools
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb devices
+List of devices attached
+emulator-5554   device
+
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb root -> 막혔다는 듯
+adbd cannot run as root in production builds
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>
+
+
+----------------------------------- 2차 db
+
+Microsoft Windows [Version 10.0.26100.3194]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\YUHAN>cd AppData\local\Android\Sdk\platform-tools
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb devies
+adb.exe: unknown command devies
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb devices
+List of devices attached
+emulator-5554   device
+
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb root
+adbd cannot run as root in production builds
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb shell
+emu64xa:/ $ ls
+acct            cache        debug_ramdisk    linkerconfig  oem          second_stage_resources  system_ext
+apex            config       dev              metadata      postinstall  storage                 tmp
+bin             d            etc              mnt           proc         sys                     vendor
+bootstrap-apex  data         init             odm           product      system                  vendor_dlkm
+bugreports      data_mirror  init.environ.rc  odm_dlkm      sdcard       system_dlkm
+emu64xa:/ $ ls -l
+total 76
+drwxr-xr-x   2 root   root        27 2009-01-01 00:00 acct
+drwxr-xr-x  82 root   root      1680 2025-03-25 00:21 apex
+lrw-r--r--   1 root   root        11 2009-01-01 00:00 bin -> /system/bin
+drwxr-xr-x   9 root   root       220 2025-03-25 00:21 bootstrap-apex
+lrw-r--r--   1 root   root        50 2009-01-01 00:00 bugreports -> /data/user_de/0/com.android.shell/files/bugreports
+drwxrwx---   2 system cache       27 2009-01-01 00:00 cache
+drwxr-xr-x   3 root   root         0 2025-03-25 00:21 config
+lrw-r--r--   1 root   root        17 2009-01-01 00:00 d -> /sys/kernel/debug
+drwxrwx--x  51 system system    4096 2025-03-25 00:21 data
+d?????????   ? ?      ?            ?                ? data_mirror
+drwxr-xr-x   2 root   root        27 2009-01-01 00:00 debug_ramdisk
+drwxr-xr-x  21 root   root      2740 2025-03-25 00:21 dev
+lrw-r--r--   1 root   root        11 2009-01-01 00:00 etc -> /system/etc
+l?????????   ? ?      ?            ?                ? init -> ?
+-?????????   ? ?      ?            ?                ? init.environ.rc
+d?????????   ? ?      ?            ?                ? linkerconfig
+d?????????   ? ?      ?            ?                ? metadata
+drwxr-xr-x  16 root   system     340 2025-03-25 00:21 mnt
+drwxr-xr-x   2 root   root       199 2009-01-01 00:00 odm
+drwxr-xr-x   2 root   root        42 2009-01-01 00:00 odm_dlkm
+drwxr-xr-x   2 root   root        27 2009-01-01 00:00 oem
+d?????????   ? ?      ?            ?                ? postinstall
+dr-xr-xr-x 389 root   root         0 2025-03-25 00:21 proc
+drwxr-xr-x   9 root   root       151 2009-01-01 00:00 product
+lrw-r--r--   1 root   root        21 2009-01-01 00:00 sdcard -> /storage/self/primary
+drwxr-xr-x   2 root   root        27 2009-01-01 00:00 second_stage_resources
+drwx--x---   5 shell  everybody  100 2025-03-25 00:21 storage
+dr-xr-xr-x  13 root   root         0 2025-03-25 00:21 sys
+drwxr-xr-x  12 root   root       274 2009-01-01 00:00 system
+d?????????   ? ?      ?            ?                ? system_dlkm
+drwxr-xr-x   9 root   root       146 2009-01-01 00:00 system_ext
+drwxrwx--x   2 shell  shell       40 2025-03-25 00:21 tmp
+drwxr-xr-x  12 root   shell      219 2009-01-01 00:00 vendor
+drwxr-xr-x   2 root   root        42 2009-01-01 00:00 vendor_dlkm
+emu64xa:/ $ ps
+USER           PID  PPID        VSZ    RSS WCHAN            ADDR S NAME
+shell         7583   473   10809364   3200 sigsuspend          0 S sh
+shell         7587  7583   10814636   4608 0                   0 R ps
+emu64xa:/ $ ps -n
+USER           PID  PPID        VSZ    RSS WCHAN            ADDR S NAME
+2000          7583   473   10809364   3200 sigsuspend          0 S sh
+2000          7588  7583   10769580   4608 0                   0 R ps
+emu64xa:/ $ mkdir aa
+mkdir: 'aa': Read-only file system
+1|emu64xa:/ $ ls
+acct            cache        debug_ramdisk    linkerconfig  oem          second_stage_resources  system_ext
+apex            config       dev              metadata      postinstall  storage                 tmp
+bin             d            etc              mnt           proc         sys                     vendor
+bootstrap-apex  data         init             odm           product      system                  vendor_dlkm
+bugreports      data_mirror  init.environ.rc  odm_dlkm      sdcard       system_dlkm
+emu64xa:/ $ /data
+/system/bin/sh: /data: can't execute: Is a directory
+126|emu64xa:/ $ cd
+emu64xa:/ $ cd /data/data
+emu64xa:/data/data $ cd kr.ac.yuhan.cs.w04_a2
+/system/bin/sh: cd: /data/data/kr.ac.yuhan.cs.w04_a2: Permission denied
+2|emu64xa:/data/data $ exit
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb root
+adbd cannot run as root in production builds
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb shell
+emu64xa:/ $ exit
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb devices
+List of devices attached
+emulator-5554   device
+
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>
+------------------------------------- 에뮬레이터 문제였다 adb root가 안된이유는 디버그?
+
+medium fhone 이거 안됨 
+
+새로 만들기
+
+
+Microsoft Windows [Version 10.0.26100.3194]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\YUHAN>cd AppData\local\Android\Sdk\platform-tools
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb devices
+List of devices attached
+emulator-5554   device
+
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb root
+restarting adbd as root
+
+C:\Users\YUHAN\AppData\Local\Android\Sdk\platform-tools>adb shell
+emu64xa:/ #
+emu64xa:/ #
+emu64xa:/ #
+emu64xa:/ #
+emu64xa:/ #
+emu64xa:/ # mkdir aa
+mkdir: 'aa': Read-only file system
+1|emu64xa:/ # cd data/data/kr.ac.yuhan.cs.w04_a2/
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2 # ls
+cache  code_cache  files
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2 # ls -l
+total 24
+drwxrws--x 2 u0_a209 u0_a209_cache 4096 2025-03-25 02:09 cache
+drwxrws--x 2 u0_a209 u0_a209_cache 4096 2025-03-25 02:09 code_cache
+drwxrwx--x 2 u0_a209 u0_a209       4096 2025-03-25 02:09 files
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2 # mkdir database
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2 # cd database/
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # pwd
+/data/data/kr.ac.yuhan.cs.w04_a2/database
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # sqlite3 masterDB
+SQLite version 3.44.3 2024-03-24 21:15:01
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE userTable ( id, char(4), username chart(15), email char(15), birthYear int );
+Parse error: near "(": syntax error
+  CREATE TABLE userTable ( id, char(4), username chart(15), email char(15), birt
+                     error here ---^
+sqlite> CREATE TABLE userTable ( id char(4), username chart(15), email char(15), birthYear int );
+sqlite> .quit
+1|emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # ls
+masterDB
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # sqlite3 masterDB
+SQLite version 3.44.3 2024-03-24 21:15:01
+Enter ".help" for usage hints.
+sqlite> .quit
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # ls
+masterDB
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # sqlite3 masterDB
+SQLite version 3.44.3 2024-03-24 21:15:01
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE userTable ( id char(4), username chart(15), email char(15), birthYear int );
+Parse error: table userTable already exists
+  CREATE TABLE userTable ( id char(4), username chart(15), email char(15), birth
+               ^--- error here
+sqlite> .quit
+1|emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # ls
+masterDB
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # ls -al
+total 32
+drwxrwxrwx 2 root    root     4096 2025-03-25 02:16 .
+drwx------ 6 u0_a209 u0_a209  4096 2025-03-25 02:10 ..
+-rw------- 1 root    root    12288 2025-03-25 02:16 masterDB
+emu64xa:/data/data/kr.ac.yuhan.cs.w04_a2/database # sqlite3 masterDB
+SQLite version 3.44.3 2024-03-24 21:15:01
+Enter ".help" for usage hints.
+sqlite>
+sqlite>
+sqlite>
+sqlite> .table
+userTable
+sqlite> .schema userTable
+CREATE TABLE userTable ( id char(4), username chart(15), email char(15), birthYear int );
+sqlite> INSERT INTO userTable VALUES ( 'Jhon', 'John Bann', 'john@naver.com', 1997 );
+sqlite> INSERT INTO userTable VALUES ( 'Kim', 'Kim Chi', 'kim@daum.net', 1999 );
+sqlite> INSERT INTO userTable VALUES ( 'Lee', 'Lee Gwi', 'lee@gmail.com', 2000 );
+sqlite> INSERT INTO userTable VALUES ( 'Park', 'Park Su', 'park@yahoo.com', 2001 );
+sqlite> .header on
+sqlite> .mode column
+sqlite> SELECT * FROM userTable;
+id    username   email           birthYear
+----  ---------  --------------  ---------
+Jhon  John Bann  john@naver.com  1997
+Kim   Kim Chi    kim@daum.net    1999
+Lee   Lee Gwi    lee@gmail.com   2000
+Park  Park Su    park@yahoo.com  2001
+sqlite> SELECT id, birthYear FROM userTable WHERE birthYear >=1997;
+id    birthYear
+----  ---------
+Jhon  1997
+Kim   1999
+Lee   2000
+Park  2001
+
