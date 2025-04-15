@@ -1,0 +1,336 @@
+시험 범위 ------------------------------------
+
+
+사용자 위치 구하기 -> 전체적인 구조 시험
+
+깃-->
+
+• Git이란?
+• Git은 리누스 토발즈Linus Torvalds가 2005년에 만든 분산 버전 관리 시스템
+(DVCS)Distributed version control systems이다.
+• Git의 기본 기능은 이력 관리이다.
+
+깃 정보 등록 아래로 쭉
+
+깃 파일 추가 아래로 쭉
+
+깃 시간 여행 -> 안함
+
+$ git push origin main 요것만 생각
+
+( Albertoicix@DESKTOP-ALBERTOICIX MINGW64 ~/OneDrive/바탕 화면/AndroidProjects (main)
+$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 490 bytes | 490.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Albertoicix/AndroidProjects.git
+* [new branch] main -> main
+)
+
+
+• 내리기
+Albertoicix@DESKTOP-ALBERTOICIX MINGW64 ~/OneDrive/바탕 화면/AndroidProjectsDwn
+
+내려 받기
+$ git clone https://github.com/Albertoicix/AndroidProjects.git . -> 본인 이름이 들어가야한다.
+
+Git : 깃이라고 읽음, 버전 관리 시스템
+• GitHub : 깃허브라고 읽음, Git으로 관리하는 프로젝트를 올려 두는 사이트
+• GUI : 그래픽 유저 인터페이스, 지유아이라고 읽음, 즉 마우스 클릭으로 사용하는 방식
+• CLI : 커맨드 라인 인터페이스, 시엘아이라고 읽음, 명령어를 키보드로 입력하는 방식
+• Git Bash : 깃배시라고 읽음, CLI 방식으로 Git을 사용할 수 있는 환경
+• Commit : 커밋이라고 읽음, 버전관리를 통해 생성된 파일,혹은 그 행위를 의미
+• Log : 로그라고 읽음, 지금까지 만든 commit을 모두 확인
+• Checkout : 체크아웃이라고 읽음, 원하는 지점으로 파일을 되돌림
+• Local Repository : 로컬 저장소라고 함, Git으로 버전 관리하는 내컴퓨터의 폴더
+• Remote Repository : 원격 저장소라고 함, 웹사이트 주소로 표현
+• Repository : 리파지토리라고 읽음, 주로 원격 저장소를 지칭
+• Push : 푸시라고 읽음, 로컬 저장소의 버전 관리된 파일을 리파지토리에 올림
+• Pull : 풀이라고 읽음, 리파지토리의 커밋을 로컬 저장소에 내려 받기
+• branch : 브랜치라고 읽음, 가지치기 또는 갈래, 지점으로 또 다른 작업공간을 의미
+• merge : 머지라고 읽음, 병합 또는 합치기, 특정 브랜치에서 작업한 내용을 또 다른 브랜치에 적용하는 것을 의미
+
+몇가지 유용한 명령어들
+• git init : 현재 디렉터리를 Git 저장소로 변환
+• git add : 파일을 로컬 저장소에 추가
+• git commit : 파일/디렉토리의 변경과 추가에 대한 설명을 저장소에 기록
+• git push : 로컬 저장소의 변경사항을 gitHub에 반영(git push origin master)
+• git checkout : 다른 브렌치로 이동 또는 Log 시점 변경
+• 예: master 브랜치를 보고 싶으면, git checkout master를 사용할 수 있음
+• git merge : 브랜치에서 하던 작업을 끝내고, master브랜치로 합치는 과정
+• git pull : 로컬 저장소의 파일/디렉토리를 최신 버전으로 갱신
+
+
+깃 동작흐름도
+
+----------------- 4주차 데이터베이스
+
+내장 메모리 파일 처리
+• 앱을 종료하고 다시 실행할 때 사용한 곳에서 이어서 작업하고 싶은 경우
+사용
+• 내장 메모리의 저장 위치 : /data/data/패키지명/files 폴더 
+-> 아래 코드도
+
+파일 처리 기본 Java 코드
+->
+FileOutputStream outFs = openFileOutput("file.txt", Context.MODE_PRIVATE);
+ String str = "안드로이드 파일처리";
+ outFs.write(str.getBytes());
+ outFs.close();
+ Toast.makeText(getApplicationContext(), "file.txt가 생성됨", Toast.LENGTH_SHORT).show();
+
+
+FileInputStream inFs = openFileInput("file.txt");
+ byte[] txt = new byte[30];
+ inFs.read(txt);
+ String str = new String(txt);
+ Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+ inFs.close();
+ } catch (IOException e) {
+
+raw 폴더 -> 원시데이터 raw 폴더
+
+데이터베이스 기본 개념 아래 전부
+
+SQLite에서 데이터베이스 구축 순서
+
+adb취소
+
+CREATE TABLE 테이블이름 (열이름1, 데이터형식, 열이름2 데이터형식, …);
+
+• .table : 현재 데이터베이스의 테이블 목록을 보여 준다.
+• .schema 테이블 이름 : 테이블의 열, 데이터 형식 등의 정보를 보여준다.
+• .header on: SELECT문으로 출력할 때 컬럼모드로 출력해 준다.
+• .mode column : SELECT문으로 출력할 때 컬럼 모드로 출력해 준다.
+• .exit : SQLITE를 종료 한다.
+
+INSERT INTO 테이블이름 VALUES ( 값1, 값2, … );
+
+
+SELECT 열이름1, 열이름2, … FROM 테이블이름 WHERE 조건;
+
+안드로이드 앱 개발을 위한 SQLite 동작 방식
+• SQLiteOpenHelper 클래스, SQLiteDatabase 클래스, Cursor 인터페이스 활용
+2025-03-23 모바일프로그래밍 응용 41
+SQLite
+Database
+SQLIiteOpenHelper 클래스 상속 받아
+재정의
+SQLIiteDatabase 클래스
+Cursor 인터페이스
+
+각 클래스에서 주로 사용되는 메소드
+2025-03-23 모바일프로그래밍 응용 42
+SQLite 관련 클래스 및 인터페이스와 메소드
+클래스 또는 인터페이스 메소드 주요 용도
+SQLiteOpenHelper클래스 생성자 DB 생성
+onCreate( ) 테이블 생성
+onUpgrade( ) 테이블 삭제 후 다시 생성
+getReadableDatabase( ) 읽기 전용 DB 열기, SQLiteDatabase 반환
+getWritableDatabase( ) 읽고 쓰기용 DB 열기, SQLiteDatabase 반환
+SQLiteDatabase 클래스 execSQL( ) SQL문(Insert/Update/Delete) 실행
+Close( ) DB 닫기
+Query( ), rawQuery( ) Select 실행 후 커서 반환
+Cursor 인터페이스 moveToFirst( ) 커서의 첫 행으로 이동
+moveToLast( ) 커서의 마지막 행으로 이동
+moveToNext( ) 현재 커서의 다음 행으로 이동
+
+
+---------- 스레드와 게임
+
+멀티태스킹
+• 하나의 응용프로그램이 여러 개의 작업(태스크)을 동시에 처리
+
+스레드
+• 프로그램 코드를 이동하면서 실행하는 하나의 제어
+• 자바의 멀티태스킹
+• 멀티스레딩만 가능
+• 프로세스 개념은 자바에 존재하지 않고, 스레드의 개념만 존재
+• 스레드는 실행 단위
+• 스레드는 스케쥴링 단위
+• 하나의 응용프로그램을 여러 개의 스레드로 구성 가
+
+하나의 애플리케이션이 동시에 여러 가지 작업을 하는 것
+• 이들 작업은 스레드(thread)라고 불린다. 
+
+자바 스레드
+• 자바 가상 기계(JVM)에 의해 스케쥴되는 실행 단위의 코드 블럭
+• 스레드는 JVM에 의해 관리됨
+• JVM은 스레드 단위로 스케쥴링
+• JVM은 하나의 자바 응용프로그램만을 실행
+• 자바 응용프로그램이 시작될 때 JVM이 함께 실행됨
+• 자바 응용프로그램이 종료하면 JVM도 함께 종료함
+• 하나의 응용프로그램은 하나 이상의 스레드로 구성 가능
+
+VM과 자바 응용프로그램, 스레드의 관계 시험안봄
+
+애플리케이션이 시작되면 안드로이드 시스템은 새로운 리눅스 프로세스를 생
+성한다.
+• 기본적으로 애플리케이션 안의 모든 컴포넌트들은 동일한 프로세스의 동일한
+스레드로 실행된다.
+• 이 기본적인 스레드를 메인 스레드(main thread)라고 부른다
+
+기본적으로 애플리케이션 안의 모든 컴포넌트들은 동일한 프로
+세스의 동일한 스레드로 실행된다. 이 기본적인 스레드를 메인
+스레드(main thread)라고 부른다. -> 사진 외우기
+
+UI 스레드(user interface thread)라고도 불린다. 
+
+Thread 클래스를 상속받아서 스레드를 작성하는 방법
+• Runnable 인터페이스를 구현한 후에 Thread 객체에 전달하는 방
+법
+ -> 스레드 사용방법 2가지
+
+스레드 상태 6 가지
+
+스레드 동기화
+• 멀티스레드의 공유 데이터의 동시 접근 문제 해결책
+• 공유데이터를 접근하고자 하는 모든 스레드의 한 줄 세우기
+• 한 스레드가 공유 데이터에 대한 작업을 끝낼 때까지 다른 스레드가 공유
+데이터에 접근하지 못하도록 함
+
+임계 영역(ciritical section)을 표기하는 키워드
+
+
+레드2가 SharedBoard의 add()를 실행하고 있는 동안, 스레
+드1이 호출할 때 대기
+Log.v : Verbose 낮은 우선순위, 검증정보
+Log.d : Debug
+Log.i : information 정보
+Log.w : warning 경고
+Log.e : Error 오류
+Log.F : Fatal 치명적 오류
+Log.s : Silent 가장 높은 순위, 침묵
+
+해결할 수 있는 3가지 방법
+View.post(Runnable) 
+
+이론적인바탕으로만문제, 코드는 간단한거
+
+----- 7주차
+
+위치 제공자(Location Provider)
+• 위치 정보 지원
+• 위치 관리자(Location Manager)
+• 시스템 서비스를 통하여 위치 정보 제공
+• 사용자 위치 구하기
+• 안드로이드에서 사용자 위치를 얻으려면 콜백 메소드를 등록
+• requestLocationUpdates() 호출
+• 새로운 위치가 얻어지면 onLocationChanged(Location location)가 호출된다.
+• 배터리를 위한 추가 조치
+
+LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+LocationListener locationListener = new LocationListener() {
+public void onLocationChanged(Location location) {
+// 새로운 위치가 발견되면 위치제공자에 의하여 호출된다.
+
+
+xmlns:tools="http://schemas.android.com/tools">
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+타깃 애플리케이션 인텐트 URI 인텐트 액션 결과
+Google Maps
+geo:latitude, longitude
+geo:latitude, longitude?z=zoom
+geo:0,0?q=my+street+address
+geo:0,0?q=business+near+city
+View
+주어진 위치에서 Maps 어플리케이션을 오
+픈한다.
+z 필드는 확대 레벨을 지정한다. 1은 전체
+지구이고 23dl 최대치 이다.
+Google Streetview
+google.streetview.cbll=lat,lng&cbp=1,ya
+w,,pitch,zoom&mz=mapZoom
+View
+Street View 애플리케이션을 실행한다.
+lat 위도
+lng 경도
+yaw 파노라마 중심
+pitch 파노라마 중심:단위 도
+zoom 파노라마 줌
+mapZoom 지도 줌
+
+
+1. 구글 플레이 서비스 SDK가 설치되어 있는지를 확인한다.
+2. 구글 클라우드 플랫폼에서 프로젝트를 등록해야 하고 결제하여야 한다.
+3. 안드로이드 애플리케이션 프로젝트를 생성한다.
+4. Google Maps Activity를 앱에 추가한다.
+4. 지도 API 키를 생성한다.
+5. 애플리케이션에 지도 API 키를 복사한다.
+6. 애플리케이션을 실행한다 -> 순서
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools">
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<application
+android:allowBackup="true"
+android:dataExtractionRules="@xml/data_extraction_rules"
+android:fullBackupContent="@xml/backup_rules"
+android:icon="@mipmap/ic_launcher"
+android:label="@string/app_name"
+android:roundIcon="@mipmap/ic_launcher_round"
+android:supportsRtl="true"
+android:theme="@style/Theme.MyGoogleMaps"
+tools:targetApi="31">
+<meta-data
+android:name="com.google.android.geo.API_KEY"
+android:value="AIzaSyBlnGXU8BElTDXOG36YMjj6TMIvwCcb84w" />
+<activity
+android:name=".MainActivity"
+android:exported="true">
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name="android.intent.category.LAUNCHER" /> -> 어디에넣어줘야하는지 매니페스트 
+
+마커 안함
+• addPolyline( ) : 지도 위에 경로를 표시하는 데 사용될 수 있는 일련의 연결된 선분을 그린다.
+• addPolygon( ) : 지도 위에 지역을 표시하는 데 사용할 수 있는 다각형을 그린다.
+• addCircle( ) : 지도 위에 원을 그린다.
+이거는 함
+
+UI 컨트롤
+• 구글 지도에서 발견되는 것과 동일한 UI 컨트롤 제어
+• UiSettings 클래스 사용
+• MapSample 예제의 UI Settings 참조
+• 줌 컨트롤
+• 우측하단에 표시 내장 줌 컨트롤 제공
+• 기본적으로 활성, 비활성은 UiSettings.setZoomControlEnabled(Boolean)을 사용
+• 나침반
+• 왼쪽 상단 모서리에 컨트롤 제공
+• 카메라가 방위각이나, 기울기를 가질 때만 표시
+• 활성 및 비활성은 UiSettings.setCompassEnabled(boolean)을 사용
+• 내 위치 버튼
+• 오른쪽 상단 모서리에 컨트롤 제공
+• 활성 및 비활성은 UiSettings.setMyLocationButtonEnabled(Boolean)
+2025-04-14
+Monday 모바일프로그래밍 응용 68
+지도와 상호 작용하기
+• 지도 제스처
+• 활성 및 비활성은 UiSettings 클래스를 사용
+• GoogleMap.getUiSettings()를 호출하여 UiSettings 객체를 얻을 수 있다.
+• 줌 제스처
+• 활성 및 비활성은 UiSettings.setZoomGesturesEnabled(Boolean)
+• 틸드 제스처
+• 활성 및 비활성은 UiSettings.setTiltGesturesEnabled(Boolean)
+• 회전 제스처
+• 활성 및 비활성은 UiSettings.setRotateGesturesEnabled(Boolean)
+• 클릭 이벤트
+• GoogleMap.setOnMapClickListener(OnMapClickListener)
+• 카메라 변경 이벤트
+• 카메라 위치 추적 : OnCameraChangeListener 사용
+• GoogleMap.setOnCameraChangeListener(OnCameraChangeListener)로 설정
+
+
+
+
+
+
+
