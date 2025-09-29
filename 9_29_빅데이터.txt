@@ -1,0 +1,94 @@
+9_29
+
+num <- c(1,2,3)
+log <- c(F,F,T)
+char <- c("a","b", "c")
+df<-data.frame(num,log,char)
+df
+df$sns <- c("kakao","facebook", "blog")
+df
+str(df)
+iris
+str(iris)
+dim(iris)
+colnames(iris)
+head(iris,10)
+table(iris[,"Species"])
+
+
+z <- matrix(1:20, nrow=4, ncol =5, byrow=1)
+z
+x <-1:4
+y <-5:8
+m1 <-cbind(x,y)
+m1
+m2 <- rbind(x,y)
+m2
+m3 <- rbind(m2,x)
+m3
+m4 <-cbind(z,x)
+m4
+m4[2,3]
+m4[2,c*1,35,]
+
+
+data <- c(514, 533, 566,
+          917, 853, 888,
+          11,  13,  10)
+
+burger <- matrix(data, nrow = 3, ncol = 3)
+
+burger
+print(burger)
+S
+
+rownames(burger) <- c("M", "L", "B")
+colnames(burger) <- c("kcal", "na", "fat")
+
+burger["M", "na"]
+burger["M", ]
+burger[ , "kcal"]
+
+
+7+8
+test<-2025
+test>3000
+test <- test + 100
+test
+print(test)
+cat('테스트값=', test)
+max(10,20,30)-min(1,2,3)
+?sort
+?sort
+help(sort)
+install.packages('cowsay')
+library(cowsay)
+say('안녕하세요',by='cat')
+
+10*5/2
+3.14*10*10
+(5*60*60) + (48 * 60) + 32
+10000 - 1000*5 + 500*3
+10000-(1000*5+500*3)
+max(63,95,84,36,48) * 500 
+?ceiling
+ceiling(2.4)
+ceiling(3.6)
+?Sys.time
+Sys.time()
+((달 * 4) + 9) * 25 + 날짜 = 계산 결과
+
+((1 * 4) + 9 ) * 25
+((2 * 4) + 9 ) * 25
+((3 * 4) + 9 ) * 25
+((4 * 4) + 9 ) * 25
+((5 * 4) + 9 ) * 25
+((6 * 4) + 9 ) * 25
+((7 * 4) + 9 ) * 25
+((8 * 4) + 9 ) * 25
+((9 * 4) + 9 ) * 25
+((10 * 4) + 9 ) * 25
+((11 * 4) + 9 ) * 25
+((12 * 4) + 9 ) * 25
+
+
