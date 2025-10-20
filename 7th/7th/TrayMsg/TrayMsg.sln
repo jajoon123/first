@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrayMsg", "TrayMsg\TrayMsg.csproj", "{9B92ED64-79B6-4BDE-A025-22EBAA4A6198}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B92ED64-79B6-4BDE-A025-22EBAA4A6198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B92ED64-79B6-4BDE-A025-22EBAA4A6198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B92ED64-79B6-4BDE-A025-22EBAA4A6198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B92ED64-79B6-4BDE-A025-22EBAA4A6198}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B1F3F48-1059-480C-8B33-5DF0099A9F2D}
+	EndGlobalSection
+EndGlobal
